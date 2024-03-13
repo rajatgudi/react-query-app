@@ -1,5 +1,20 @@
 import styled from "styled-components";
-
+const PostHeader = styled.div`
+  display: flex;
+  gap: 10px;
+  margin: 10px;
+  align-items: center;
+  justify-content: space-between;
+`;
+const PostHeaderTitle = styled.h2`
+  font-weight: bold;
+`;
+const PostHeaderSelect = styled.select`
+  padding: 5px 10px;
+  width: 100px;
+  font-size: large;
+  background-color: lightblue;
+`;
 const PostContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -80,6 +95,63 @@ const PostInputTag = styled.div`
   color: white;
   font-weight: bold;
 `;
+const PaginationButton = styled.button`
+  padding: 10px;
+  background-color: ${(props) =>
+    (props.active ? "darkslateblue" : props.disabled ? "grey" : "#222") ||
+    "#222"};
+  color: white;
+  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
+  margin-right: 4px;
+  border-radius: 10px;
+`;
+const AppStyles = styled.div`
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  align-items: center;
+
+  .modal {
+    padding: 4px;
+    display: flex;
+    flex-direction: row-reverse;
+    width: 80%;
+    height: 80vh;
+    border: 1px solid black;
+  }
+
+  form {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .close-button {
+    width: 32px;
+    height: 32px;
+  }
+
+  #up {
+    border: 2px solid black;
+    transform: rotate(-45deg);
+    position: relative;
+    top: 14px;
+    right: 6px;
+    width: 40px;
+    background-color: black;
+    border-radius: 25px;
+  }
+  #down {
+    border: 2px solid black;
+    transform: rotate(45deg);
+    position: relative;
+    top: 10px;
+    right: 6px;
+    width: 40px;
+    background-color: black;
+    border-radius: 25px;
+  }
+`;
 export {
   PostContainer,
   PostItem,
@@ -91,4 +163,9 @@ export {
   PostButton,
   PostInputTags,
   PostInputTag,
+  PostHeader,
+  PostHeaderTitle,
+  PostHeaderSelect,
+  PaginationButton,
+  AppStyles,
 };

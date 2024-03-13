@@ -1,5 +1,7 @@
-const fetchPosts = async () => {
-  const response = await fetch(`http://localhost:3000/posts?_sort=-id`);
+const fetchPosts = async (page) => {
+  const response = await fetch(
+    `http://localhost:3000/posts?_sort=-id&_page=${page}&_per_page=${10}`
+  );
   const postData = await response.json();
   console.log("api postData", postData);
   return postData;
